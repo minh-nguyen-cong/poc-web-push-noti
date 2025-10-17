@@ -32,14 +32,15 @@ Once your project is created, you need to register your web application with it.
 
     ```javascript
     // Your web app's Firebase configuration
+    // (Example from poc-web-push-noti-dev)
     const firebaseConfig = {
-      apiKey: "AIza...",
-      authDomain: "your-project-id.firebaseapp.com",
-      projectId: "your-project-id",
-      storageBucket: "your-project-id.appspot.com",
-      messagingSenderId: "1234567890",
-      appId: "1:1234567890:web:abcdef123456",
-      measurementId: "G-ABCDEFGHIJ" // Optional, for Google Analytics
+      apiKey: "AIzaSyCpJ8zeZrRaKiMC1wEgq14LQygnQIIxpLI",
+      authDomain: "poc-web-push-noti-dev.firebaseapp.com",
+      projectId: "poc-web-push-noti-dev",
+      storageBucket: "poc-web-push-noti-dev.appspot.com",
+      messagingSenderId: "321858586201",
+      appId: "1:321858586201:web:a47c70f6fed449d7b6d348",
+      measurementId: "G-BY8DE5EKHN"
     };
     ```
 
@@ -55,13 +56,19 @@ Once your project is created, you need to register your web application with it.
     const app = initializeApp(firebaseConfig);
     ```
 
-    > **Security Hint**: It is a best practice to store these keys in environment variables (`.env` files) rather than hardcoding them directly in the source code. This prevents sensitive keys from being committed to version control.
+    > **Security Hint**: It is a critical best practice to store sensitive keys in environment variables (`.env` files) rather than hardcoding them. This prevents them from being committed to version control. For a Create React App project, you can create a `.env.local` file and prefix your variables with `REACT_APP_`.
+    >
+    > ```
+    > REACT_APP_FIREBASE_API_KEY="AIza..."
+    > ```
 
 5.  **Generate VAPID Key**: For web push notifications to work, you need a VAPID key (Web Push certificate). This key authenticates your application server to the push service.
     *   Go to **Project Settings** (click the gear icon ⚙️).
     *   Select the **Cloud Messaging** tab.
     *   Under the **Web configuration** section, find **Web Push certificates**.
     *   Click **Generate key pair**. This key will be used later when requesting a user's notification token.
+    >
+    > **Security Hint**: Just like the `firebaseConfig`, the VAPID key should also be stored as an environment variable (e.g., `REACT_APP_FIREBASE_VAPID_KEY`).
 
 ### 2.3. How Push Notifications Work (Foreground vs. Background)
 
