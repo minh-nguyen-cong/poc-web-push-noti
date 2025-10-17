@@ -165,3 +165,10 @@ The Firebase Console provides a simple way to send test messages to a specific d
 ---
 
 This guide covers the essential steps to get started with Firebase Cloud Messaging for web. By following this, any developer should be able to set up a basic implementation and understand the core mechanics of web push notifications.
+
+---
+
+## 3. References
+
+1.  **PoC GitHub Repository**: [https://github.com/minh-nguyen-cong/poc-web-push-noti.git](https://github.com/minh-nguyen-cong/poc-web-push-noti.git)
+2.  **System Design of Push Notifications (ByteByteGo)**: [https://bytebytego.com/guides/how-are-notifications-pushed-to-our-phones-or-pcs/](https://bytebytego.com/guides/how-are-notifications-pushed-to-our-phones-or-pcs/)
